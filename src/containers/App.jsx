@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './App.css';
 import { setSearchField, requestRobots } from '../actions';
-import MainPage from '../components//MainPage/MainPage';
+import MainPage from '../components/MainPage/MainPage';
 
 const mapStateToProps = state => {
     return { 
