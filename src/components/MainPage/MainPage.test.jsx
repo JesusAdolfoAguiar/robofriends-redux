@@ -2,9 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import MainPage from './MainPage';
 
-//Declare a mock function for the onRequestRobots prop and any other necessary props:
+describe('MainPage', () => {
+  //Declare a mock function for the onRequestRobots prop and any other necessary props:
 
-const mockProps = {
+  const mockProps = {
     onRequestRobots: jest.fn(),
     onSearchChange: jest.fn(),
     robots: [],
@@ -12,17 +13,18 @@ const mockProps = {
     isPending: false
   };
 
-//Write the test case using the render function from React Testing Library:
+  //Write the test case using the render function from React Testing Library:
 
-test('renders MainPage component', () => {
+  test('renders MainPage component', () => {
     render(<MainPage {...mockProps} />);
     // Add your assertions here
   });
 
-//Add your assertions inside the test case. For example, you can check if the loading text is rendered when isPending is true:
+  //Add your assertions inside the test case. For example, you can check if the loading text is rendered when isPending is true:
 
-test('renders MainPage component', () => {
+  test('renders MainPage component', () => {
     render(<MainPage {...mockProps} isPending={true} />);
     const loadingElement = screen.getByText(/Loading/i);
     expect(loadingElement).toBeInTheDocument(); 
-}); 
+  }); 
+});
